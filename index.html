@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Spinner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="app-header">
+            <h1>Food Spinner</h1>
+            <p class="subtitle">Can't decide? Let's spin it out.</p>
+        </header>
+
+        <section class="visual-section">
+            <div class="wheel-wrapper">
+                <div class="pointer"></div>
+                <canvas id="wheel" width="420" height="420"></canvas>
+            </div>
+
+            <div class="action-area">
+                <button id="spin" class="btn-main">SPIN</button>
+            </div>
+        </section>
+
+        <section class="feedback-section">
+            <div id="big-result-container" class="hidden">
+                <h2 id="big-result-text"></h2>
+                <span class="label">The wheel chose</span> <h2 id="big-result-text"></h2>
+            </div>
+            
+            <div id="scoreboard" class="scoreboard"></div>
+            <p id="result" class="result-display"></p>
+        </section>
+
+        <hr class="soft-divider">
+
+        <section class="input-section">
+            <div class="input-header">
+                <h3>What's are the food?</h3>
+            </div>
+
+            <textarea id="choices" placeholder="Type options here...&#10;One per line."></textarea>
+
+            <div class="settings-row">
+                <div class="best-of-group">
+                    <label for="bestOf">Wins to win</label>
+                    <input id="bestOf" type="number" value="1" min="1" max="10">
+                </div>
+
+                <div class="button-group" style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+                    <button id="surprise" class="btn-secondary" style="border-color: var(--clay); color: var(--clay); width: 100%;">
+                        Give me random choices
+                    </button>
+                    <p style="font-size: 0.7rem; color: var(--primary); margin: 0; opacity: 0.7; font-style: italic;">
+                        Anything works? Then let the generator give you some options.
+                    </p>
+                    
+                    <button id="generate" class="btn-secondary" style="width: 100%; font-weight: 700;">Update Wheel</button>
+
+                    <button id="reset-all" class="btn-secondary" style="width: 100%; margin-top: 4px; opacity: 0.6; font-size: 0.8rem; border: 1px dashed #ccc;">
+                        Reset Everything
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="assets/js/logic.js"></script>
+    <script src="assets/js/wheel.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
